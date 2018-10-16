@@ -1,0 +1,7 @@
+node_modules
+.DS_Store
+package-lock.json
+views
+public
+!public/manifest.json
+!public/robots.txt
