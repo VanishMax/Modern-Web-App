@@ -1,6 +1,6 @@
 {
   "name": "PWAtemplate",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Best PWA by VanishMax",
   "main": "app.js",
   "author": "VanishMax",
@@ -34,9 +34,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.3.0"
-  },
-  "devDependencies": {
+    "redux-thunk": "^2.3.0",
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.1",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
