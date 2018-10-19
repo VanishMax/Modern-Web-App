@@ -3,7 +3,7 @@ import { INCREASE, DECREASE } from './actions'
 export default function count(state, action) {
   switch (action.type) {
     case INCREASE:
-      return obj = Object.assign({}, state, {
+      return Object.assign({}, state, {
         count: state.count + 1
       })
     case DECREASE:
