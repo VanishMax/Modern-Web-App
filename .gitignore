@@ -3,6 +3,6 @@ node_modules
 .idea
 package-lock.json
 views
-public/
+public/*
 !public/manifest.json
 !public/robots.txt
