@@ -1,19 +1,16 @@
-import { REQUEST_APPS,  RECEIVE_APPS } from './actions';
+import { INCREASE, DECREASE } from './actions'
 
-function apps( state = {isFetching: false, apps: []}, action) {
+export default function count(state, action) {
   switch (action.type) {
-    case REQUEST_APPS:
+    case INCREASE:
+      return obj = Object.assign({}, state, {
+        count: state.count + 1
+      })
+    case DECREASE:
       return Object.assign({}, state, {
-        isFetching: true
-      });
-    case RECEIVE_APPS:
-      return Object.assign({}, state, {
-        isFetching: false,
-        apps: action.apps
-      });
+        count: state.count - 1
+      })
     default:
       return state
   }
 }
-
-export default apps

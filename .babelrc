@@ -19,6 +19,9 @@
       "paths": [{
         "rootPathPrefix": "~",
         "rootPathSuffix": ""
+      }, {
+        "rootPathPrefix": "&",
+        "rootPathSuffix": "src/"
       }]
     }]
   ]

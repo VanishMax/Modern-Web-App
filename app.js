@@ -21,7 +21,8 @@ Loadable.preloadAll().then(() => app.listen(PORT, '0.0.0.0', function () {
 
 let initialState = {
   isFetching: false,
-  mobile: null
+  mobile: null,
+  count: 5
 }
 
 // server rendered home page
