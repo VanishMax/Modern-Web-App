@@ -1,6 +1,6 @@
 {
   "name": "PWAtemplate",
-  "version": "7.0.1",
+  "version": "7.1.0",
   "description": "Best PWA by VanishMax",
   "main": "app.js",
   "author": "VanishMax",
@@ -9,14 +9,11 @@
     "npm": "6.1.0"
   },
   "scripts": {
-    "start": "npm run build && npm run startProd",
+    "start": "npm run pack && npm run startProd",
     "startProd": "NODE_ENV=production node index.js",
     "pack": "webpack --mode production --config webpack.config.js",
-    "babel": "babel src -d views",
-    "build": "npm run pack && npm run babel",
-    "startDev": "npm run buildDev && node index.js",
-    "packDev": "webpack --mode development --config webpack.config.js",
-    "buildDev": "npm run packDev && npm run babel"
+    "startDev": "npm run packDev && node index.js",
+    "packDev": "webpack --mode development --config webpack.config.js"
   },
   "dependencies": {
     "@material-ui/core": "^3.0.3",
@@ -44,8 +41,8 @@
     "babel-loader": "^8.0.2",
     "babel-plugin-dynamic-import-node": "^2.1.0",
     "babel-plugin-root-import": "^6.1.0",
-    "webpack": "4.16.0",
-    "webpack-cli": "^2.1.5",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
     "workbox-webpack-plugin": "^3.4.1"
   }
 }
