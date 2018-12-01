@@ -15,6 +15,9 @@ const styles = {
     marginTop: 200,
     width: "40%",
     padding: 15
+  },
+  btnLeft: {
+    marginRight: 20
   }
 }
 
@@ -38,12 +41,12 @@ class Home extends React.Component{
           <title>VaMax</title>
           <meta name="description" content="VaMax app" />
         </Helmet>
-        <Paper elevation={4} style={styles.paper}>
+        <Paper elevation={4} style={styles.paper} align="center">
           <Typography variant="h5">Redux-Counter</Typography>
           <Typography variant="subtitle1">Counter: {this.props.count}</Typography>
           <br/>
-          <Button variant="contained" onClick={this.increase}>Increase</Button>
-          <Button variant="contained" onClick={this.decrease}>Decrease</Button>
+          <Button variant="contained" color="primary" onClick={this.increase} style={styles.btnLeft}>Increase</Button>
+          <Button variant="contained" color="primary" onClick={this.decrease}>Decrease</Button>
         </Paper>
       </div>
     )
