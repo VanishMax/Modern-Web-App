@@ -4,12 +4,12 @@
   "description": "The app which just is the best!!!",
   "icons": [
     {
-      "src":"/assets/yellow 192x192.png",
+      "src":"/assets/logos/yellow 192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/assets/yellow 512.png",
+      "src": "/assets/logos/yellow 512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
