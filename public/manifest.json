@@ -1,10 +1,10 @@
 {
-  "short_name": "VaMapp",
+  "short_name": "VanishMaxApp",
   "name": "VanishMax's app",
   "description": "The app which just is the best!!!",
   "icons": [
     {
-      "src":"/assets/logos/yellow 192x192.png",
+      "src":"/assets/logos/yellow 192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
