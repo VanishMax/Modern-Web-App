@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as Actions from '&/redux/actions'
 
-import Header from '../Header'
+import Header from './Header'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'

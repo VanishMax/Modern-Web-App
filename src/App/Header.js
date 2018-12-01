@@ -14,7 +14,7 @@ export default function Header() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" color="inherit">
-          News
+          MWA
         </Typography>
       </Toolbar>
     </AppBar>
