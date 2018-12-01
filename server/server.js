@@ -26,19 +26,22 @@ import template from './template'
 
 
 
-export default function render(req, res, initialState) {
+export default function render(req, res, initialState, mobile) {
 
   const reactRouterContext = {}
 
   const sheetsRegistry = new SheetsRegistry()
   const sheetsManager = new Map()
   // Create a theme instance.
- const theme = createMuiTheme({
+  const theme = createMuiTheme({
     palette: {
       primary: purple,
       secondary: {
         main: '#f44336',
       },
+    },
+    typography: {
+      useNextVariants: true,
     },
   })
   const generateClassName = createGenerateClassName()
@@ -47,14 +50,14 @@ export default function render(req, res, initialState) {
 
   let modules = []
 
-  // render the App store static markup ins content variable
+   // render the App store static markup ins content variable
   let content = renderToString(
     <StaticRouter location={req.url} context={reactRouterContext}>
       <Provider store={store} >
         <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
           <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
             <Loadable.Capture report={moduleName => modules.push(moduleName)}>
-              {initialState.mobile === null ? <App/> : <MobileApp/> }
+              {mobile === null ? <App/> : <MobileApp/> }
             </Loadable.Capture>
           </MuiThemeProvider>
         </JssProvider>
@@ -63,10 +66,8 @@ export default function render(req, res, initialState) {
   )
 
   let bundles = getBundles(stats, modules)
-
-  const preloadedState = store.getState()
-
   const helmet = Helmet.renderStatic()
+  initialState.mobile = mobile
 
   return template(sheetsRegistry, helmet, initialState, content, bundles)
 }

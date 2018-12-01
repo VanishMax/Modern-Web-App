@@ -18,12 +18,15 @@ delete window.__STATE__
 const state1 = store.getState()
 
 const theme = createMuiTheme({
-    palette: {
-      primary: purple,
-      secondary: {
-        main: '#f44336',
-      },
+  palette: {
+    primary: purple,
+    secondary: {
+      main: '#f44336',
     },
+  },
+  typography: {
+    useNextVariants: true,
+  },
 })
 
 Loadable.preloadReady().then(() => {

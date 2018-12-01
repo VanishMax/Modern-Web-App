@@ -1,12 +1,12 @@
 // html skeleton provider
-export default function template(sheetsRegistry, helmet, initialState = {}, content = "", bundles){
-  let css = sheetsRegistry.toString()
-  let scripts = ` <script>
+export default function template(sheetsRegistry, helmet, initialState = {}, content = '', bundles) {
+  const css = sheetsRegistry.toString()
+  const scripts = ` <script>
                    window.__STATE__ = ${JSON.stringify(initialState)}
                 </script>
                 <script src="/client.js"></script>
                 `
-  let page = `<!DOCTYPE html>
+  const page = `<!DOCTYPE html>
               <html lang="en">
               <head>
                 ${helmet.title.toString()}
@@ -25,9 +25,7 @@ export default function template(sheetsRegistry, helmet, initialState = {}, cont
                    <div id="app" class="wrap-inner">
                       <!--- magic happens here -->  ${content}
                    </div>
-                   ${bundles.map(bundle => {
-    return `<script src="/${bundle.file}"></script>`
-  }).join('\n')}
+                   ${bundles.map(bundle => `<script src='/${bundle.file}'></script>`).join('\n')}
                 </div>
                 <script>
                   if ('serviceWorker' in navigator) {
