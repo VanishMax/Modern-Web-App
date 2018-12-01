@@ -6,3 +6,4 @@ views
 public/*
 !public/manifest.json
 !public/robots.txt
+!public/service-worker.js
