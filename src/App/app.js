@@ -8,6 +8,11 @@ const AsyncHome = Loadable({
   loading: Loading,
   delay: 300,
 })
+const AsyncAbout = Loadable({
+  loader: () => import(/* webpackChunkName: "About" */ './About'),
+  loading: Loading,
+  delay: 300,
+})
 
 class App extends Component {
 
@@ -23,6 +28,7 @@ class App extends Component {
     return(
       <Switch>
         <Route exact path="/" component={AsyncHome}/>
+        <Route exact path="/about" component={AsyncAbout}/>
       </Switch>
     )
   }

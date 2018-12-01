@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import * as Actions from '&/redux/actions'
 
-import Header from '../Header'
+import Header from './Header'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
@@ -38,8 +38,8 @@ class Home extends React.Component{
       <div>
         <Header/>
         <Helmet>
-          <title>VaMax</title>
-          <meta name="description" content="VaMax app" />
+          <title>MWA - Home</title>
+          <meta name="description" content="Modern Web App - Home Page" />
         </Helmet>
         <Paper elevation={4} style={styles.paper} align="center">
           <Typography variant="h5">Redux-Counter</Typography>
