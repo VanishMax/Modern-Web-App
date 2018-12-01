@@ -19,6 +19,11 @@ export default function template(sheetsRegistry, helmet, initialState = {}, cont
                 <link rel="shortcut icon" href="/assets/logos/favicon.ico" type="image/x-icon">
                 <link rel="icon" href="/assets/logos/favicon.ico" type="image/x-icon">
                 <link rel="stylesheet" href="/assets/global.css">
+                <script>
+                  if ((!location.port || location.port == "80") && location.protocol != 'https:') {
+                    location.protocol = 'https:';
+                  }
+                </script>
               </head>
               <body>
                 <div class="content">
@@ -28,11 +33,17 @@ export default function template(sheetsRegistry, helmet, initialState = {}, cont
                    ${bundles.map(bundle => `<script src='/${bundle.file}'></script>`).join('\n')}
                 </div>
                 <script>
-                  if ('serviceWorker' in navigator) {
-                      window.addEventListener('load', function() {
-                          navigator.serviceWorker.register('/service-worker.js');
+                if ('serviceWorker' in navigator) {
+                  window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                      .then(registration => {
+                        console.log('Service Worker registered! 😎');
+                      })
+                      .catch(err => {
+                        console.log('Registration failed 😫 ', err);
                       });
-                  }
+                  });
+                }
                 </script>
                   <style id="jss-server-side">${css}</style>
                   ${scripts}
