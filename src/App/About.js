@@ -6,10 +6,16 @@ import Paper from '@material-ui/core/Paper/Paper'
 
 const styles = {
   paper: {
-    margin: "auto",
-    marginTop: 200,
-    width: "40%",
-    padding: 15
+    margin: 'auto',
+    marginTop: 150,
+    width: '60%'
+  },
+  img: {
+    width: '100%'
+  },
+  typography: {
+    marginTop: 15,
+    marginBottom: 15
   }
 }
 
@@ -22,7 +28,12 @@ export default function About() {
       </Helmet>
       <Header/>
       <Paper elevation={4} style={styles.paper} align="center">
-        <Typography variant="h5">About MWA</Typography>
+        <Typography variant="h5" style={styles.typography}>About MWA</Typography>
+        <img src="/assets/MWA.png" alt="MWA (Modern Web App) is a new way to build your web apps" style={styles.img}/>
+        <br/>
+        <Typography variant="subtitle1">
+          Learn more about it <a href="https://github.com/vanishmax/modern-web-app" target="_blank"> here - GitHub</a>
+        </Typography>
       </Paper>
     </React.Fragment>
   )

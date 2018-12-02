@@ -11,6 +11,13 @@ const styles = {
     marginTop: 20,
     width: "90%",
     padding: 15
+  },
+  img: {
+    width: '100%'
+  },
+  typography: {
+    marginTop: 15,
+    marginBottom: 15
   }
 }
 
@@ -24,8 +31,12 @@ export default class About extends React.Component{
           <meta name="description" content="Mobile About Page" />
         </Helmet>
         <Paper elevation={4} style={styles.paper} align="center">
-          <Typography variant="h5">About MWA</Typography>
+          <Typography variant="h5" style={styles.typography}>About MWA</Typography>
+          <img src="/assets/MWA.png" alt="MWA (Modern Web App) is a new way to build your web apps" style={styles.img}/>
           <br/>
+          <Typography variant="subtitle1">
+            Learn more about it <a href="https://github.com/vanishmax/modern-web-app" target="_blank"> here - GitHub</a>
+          </Typography>
         </Paper>
       </div>
     )

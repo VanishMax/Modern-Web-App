@@ -1,48 +1,36 @@
-const PRECACHE = 'precache-v2'
-const RUNTIME = 'runtime'
+var CACHE = 'cache-and-update'
 
-const PRECACHE_URLS = [
-  './',
-  '/assets/',
-]
-
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(PRECACHE)
-      .then(cache => cache.addAll(PRECACHE_URLS))
-      .then(self.skipWaiting())
-  )
+self.addEventListener('install', function(evt) {
+  evt.waitUntil(precache())
 })
 
-self.addEventListener('activate', event => {
-  const currentCaches = [PRECACHE, RUNTIME]
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return cacheNames.filter(cacheName => !currentCaches.includes(cacheName))
-    }).then(cachesToDelete => {
-      return Promise.all(cachesToDelete.map(cacheToDelete => {
-        return caches.delete(cacheToDelete)
-      }))
-    }).then(() => self.clients.claim())
-  )
+self.addEventListener('fetch', function(evt) {
+  console.log('The service worker is serving the asset.')
+  evt.respondWith(fromCache(evt.request))
+  evt.waitUntil(update(evt.request))
 })
 
-self.addEventListener('fetch', event => {
-  if (event.request.url.startsWith(self.location.origin)) {
-    event.respondWith(
-      caches.match(event.request).then(cachedResponse => {
-        if (cachedResponse) {
-          return cachedResponse
-        }
+function precache() {
+  return caches.open(CACHE).then(function (cache) {
+    return cache.addAll([
+      './',
+      '/assets/'
+    ])
+  })
+}
 
-        return caches.open(RUNTIME).then(cache => {
-          return fetch(event.request).then(response => {
-            return cache.put(event.request, response.clone()).then(() => {
-              return response
-            })
-          })
-        })
-      })
-    )
-  }
-})
+function fromCache(request) {
+  return caches.open(CACHE).then(function (cache) {
+    return cache.match(request).then(function (matching) {
+      return matching || Promise.reject('no-match')
+    })
+  })
+}
+
+function update(request) {
+  return caches.open(CACHE).then(function (cache) {
+    return fetch(request).then(function (response) {
+      return cache.put(request, response)
+    })
+  })
+}
