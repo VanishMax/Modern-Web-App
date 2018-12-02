@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper/Paper'
 const styles = {
   paper: {
     margin: 'auto',
-    marginTop: 150,
+    marginTop: 50,
     width: '60%'
   },
   img: {

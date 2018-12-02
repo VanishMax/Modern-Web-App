@@ -9,8 +9,7 @@ const styles = {
   paper: {
     margin: "auto",
     marginTop: 20,
-    width: "90%",
-    padding: 15
+    width: "90%"
   },
   img: {
     width: '100%'
