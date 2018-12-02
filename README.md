@@ -1,6 +1,7 @@
 # React PWA Boilerplate
-<p align="center"> <strong><em> Just for you </em></strong> </p>
-<p align="center"> App is created for those who has been
+![MWA - Modern Web App](./assets/MWA.png)
+ 
+App is created for those who has been
 searching for nice and scalable example of Progressive Web App with
 Server Side Rendering and Code Splitting</p>
 
