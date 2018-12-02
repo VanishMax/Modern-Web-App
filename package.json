@@ -8,6 +8,7 @@
     "node": "10.7.0",
     "npm": "6.1.0"
   },
+  "license": "MIT",
   "scripts": {
     "start": "npm run pack && npm run startProd",
     "startProd": "NODE_ENV=production node index.js",

@@ -7,7 +7,7 @@ Server Side Rendering and Code Splitting</p>
 *Why do I need it?* - It is a ready template for big and scalable
 projects like shops, blogs and social networks. All you need is to
 write components with React and Redux, sending requests to your
-backend.
+backend.<hr/>
 
 ### Features:
 * Server Side Rendering
@@ -20,4 +20,6 @@ backend.
 * All Lighthouse's tests are passed at more than 90%
 * And much more
 
-If you have some questions or just want to talk - vanishmax2018@gmail.com
+If you have some questions or just want to talk - vanishmax2018@gmail.com<hr/>
+### License
+This project is licensed under the terms of the [MIT license](https://github.com/VanishMax/Modern-Web-App/blob/master/LICENSE)
