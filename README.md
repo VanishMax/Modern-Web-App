@@ -1,4 +1,4 @@
-# React PWA Boilerplate
+# Modern Web App
 ![MWA - Modern Web App](./assets/MWA.png)
  
 App is created for those who has been
