@@ -2,9 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
+import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer'
 import Divider from '@material-ui/core/Divider'
 import List from '@material-ui/core/List'
@@ -21,6 +20,11 @@ const styles = {
   },
   link: {
     textDecoration: 'none'
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+    fontSize: 25
   }
 }
 
@@ -40,10 +44,8 @@ export default class Header extends React.Component{
       <React.Fragment>
         <AppBar position="static">
           <Toolbar>
-            <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer}
-                        style={{marginLeft: -12, marginRight: 20}}>
-              <MenuIcon />
-            </IconButton>
+            <Button color="inherit" aria-label="Menu" onClick={this.toggleDrawer}
+                    style={styles.menuButton}>&#9776;</Button>
             <Typography variant="h6" color="inherit">
               Mobile MWA
             </Typography>
