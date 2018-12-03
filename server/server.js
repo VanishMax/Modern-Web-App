@@ -8,8 +8,7 @@ import stats from '~/public/react-loadable.json'
 import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import configureStore from '~/src/redux/configureStore'
-import App from '~/src/App/app'
-import MobileApp from '~/src/MobileApp/app'
+import {Helmet} from "react-helmet"
 
 import { SheetsRegistry } from 'react-jss/lib/jss'
 import JssProvider from 'react-jss/lib/JssProvider'
@@ -20,19 +19,16 @@ import {
 } from '@material-ui/core/styles'
 import purple from '@material-ui/core/colors/purple'
 
-import {Helmet} from "react-helmet"
-
+import App from '&/app/App'
+import MobileApp from '&/mobileApp/App'
 import template from './template'
 
-
-
-export default function render(req, res, initialState, mobile) {
+export default function render(url, initialState, mobile) {
 
   const reactRouterContext = {}
 
   const sheetsRegistry = new SheetsRegistry()
   const sheetsManager = new Map()
-  // Create a theme instance.
   const theme = createMuiTheme({
     palette: {
       primary: purple,
@@ -50,9 +46,8 @@ export default function render(req, res, initialState, mobile) {
 
   let modules = []
 
-   // render the App store static markup ins content variable
   let content = renderToString(
-    <StaticRouter location={req.url} context={reactRouterContext}>
+    <StaticRouter location={url} context={reactRouterContext}>
       <Provider store={store} >
         <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
           <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>

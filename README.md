@@ -12,9 +12,9 @@ backend.<hr/>
 
 ### Features:
 * Server Side Rendering
-* Progressive Web App with Google Workbox
+* Progressive Web App
 * Code Splitting using React-Loadable
-* React-router v4
+* React-router
 * Material-ui v3 supported
 * Mobile version included
 * All modules are up-to-date
