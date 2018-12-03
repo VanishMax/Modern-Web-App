@@ -17,9 +17,5 @@
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#810051",
-  "background_color": "#FFFFFF",
-  "serviceworker": {
-    "src": "/service-worker.js",
-    "scope": "/"
-  }
+  "background_color": "#FFFFFF"
 }
