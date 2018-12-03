@@ -9,8 +9,6 @@ const app = express()
 app.use(express.static('public'))
 app.use('/assets', express.static(path.resolve(__dirname, 'assets')))
 
-app.disable('x-powered-by')
-
 const PORT = process.env.PORT || 3000
 Loadable.preloadAll().then(() => app.listen(PORT, '0.0.0.0', () => {
   console.log(`The app is running in PORT ${PORT}`)

@@ -30,7 +30,7 @@ const theme = createMuiTheme({
 
 Loadable.preloadReady().then(() => {
   hydrate(
-    <Provider store={store} >
+    <Provider store={store}>
       <MuiThemeProvider theme={theme}>
         <BrowserRouter>
           {state1.mobile === null ? <App/> : <MobileApp/> }

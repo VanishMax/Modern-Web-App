@@ -4,8 +4,21 @@ export default function template(sheetsRegistry, helmet, initialState = {}, cont
   const scripts = ` <script>
                    window.__STATE__ = ${JSON.stringify(initialState)}
                 </script>
-                <script src="/client.js"></script>
-                `
+                <script>
+                if ('serviceWorker' in navigator) {
+                  window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js')
+                      .then(registration => {
+                        console.log('Service Worker registered! 😎');
+                      })
+                      .catch(err => {
+                        console.log('Registration failed 😫 ', err);
+                      });
+                  });
+                }
+                </script>
+                <script src="/client.js"></script>`
+
   const page = `<!DOCTYPE html>
               <html lang="en">
               <head>
@@ -32,21 +45,8 @@ export default function template(sheetsRegistry, helmet, initialState = {}, cont
                    </div>
                    ${bundles.map(bundle => `<script src='/${bundle.file}'></script>`).join('\n')}
                 </div>
-                <script>
-                if ('serviceWorker' in navigator) {
-                  window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js')
-                      .then(registration => {
-                        console.log('Service Worker registered! 😎');
-                      })
-                      .catch(err => {
-                        console.log('Registration failed 😫 ', err);
-                      });
-                  });
-                }
-                </script>
-                  <style id="jss-server-side">${css}</style>
-                  ${scripts}
+                <style id="jss-server-side">${css}</style>
+                ${scripts}
               </body>
               `
 
