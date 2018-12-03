@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React from 'react'
 import { Switch, Route } from 'react-router'
-import Loadable from "react-loadable"
-import Loading from '~/src/Loading'
 
+import Loadable from 'react-loadable'
+import Loading from '~/src/Loading'
 const AsyncHome = Loadable({
   loader: () => import(/* webpackChunkName: "MobileHome" */ './Home'),
   loading: Loading,
@@ -14,24 +14,11 @@ const AsyncAbout = Loadable({
   delay: 300,
 })
 
-class App extends Component {
-
-  componentDidMount() {
-    const jssStyles = document.getElementById('jss-server-side')
-    if (jssStyles && jssStyles.parentNode) {
-      jssStyles.parentNode.removeChild(jssStyles)
-    }
-  }
-
-
-  render() {
-    return(
-      <Switch>
-        <Route exact path="/" component={AsyncHome}/>
-        <Route exact path="/about" component={AsyncAbout}/>
-      </Switch>
-    )
-  }
+export default function MobileApp() {
+  return(
+    <Switch>
+      <Route exact path="/" component={AsyncHome}/>
+      <Route exact path="/about" component={AsyncAbout}/>
+    </Switch>
+  )
 }
-
-export default App

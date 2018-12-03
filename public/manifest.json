@@ -1,10 +1,10 @@
 {
-  "short_name": "VanishMaxApp",
-  "name": "VanishMax's app",
-  "description": "The app which just is the best!!!",
+  "short_name": "MWA",
+  "name": "Modern Web App",
+  "description": "Modern app built with React SSR, PWA, material-ui, code splitting and much more",
   "icons": [
     {
-      "src":"/assets/logos/yellow 192.png",
+      "src": "/assets/logos/yellow 192.png",
       "sizes": "192x192",
       "type": "image/png"
     },

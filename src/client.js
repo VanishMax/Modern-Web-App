@@ -13,8 +13,6 @@ import purple from '@material-ui/core/colors/purple'
 
 const state = window.__STATE__
 const store = configureStore(state)
-delete window.__STATE__
-const state1 = store.getState()
 
 const theme = createMuiTheme({
   palette: {
@@ -33,7 +31,7 @@ Loadable.preloadReady().then(() => {
     <Provider store={store}>
       <MuiThemeProvider theme={theme}>
         <BrowserRouter>
-          {state1.mobile === null ? <App/> : <MobileApp/> }
+          {state.mobile === null ? <App/> : <MobileApp/> }
         </BrowserRouter>
       </MuiThemeProvider>
     </Provider>,

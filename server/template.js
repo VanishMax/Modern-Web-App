@@ -9,7 +9,7 @@ export default function template(sheetsRegistry, helmet, initialState = {}, cont
                   window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js')
                       .then(registration => {
-                        console.log('Service Worker registered! 😎');
+                        console.log('Service Worker is registered! 😎');
                       })
                       .catch(err => {
                         console.log('Registration failed 😫 ', err);
