@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 import * as Actions from '&/redux/actions'
 
 import Header from './Header'
@@ -36,11 +36,11 @@ class Home extends React.Component{
   render(){
     return (
       <div>
-        <Header/>
         <Helmet>
           <title>MWA - Home</title>
           <meta name="description" content="Modern Web App - Home Page" />
         </Helmet>
+        <Header/>
         <Paper elevation={4} style={styles.paper} align="center">
           <Typography variant="h5">Redux-Counter</Typography>
           <Typography variant="subtitle1">Counter: {this.props.count}</Typography>

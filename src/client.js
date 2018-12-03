@@ -1,18 +1,17 @@
 import React from 'react'
-import {hydrate} from 'react-dom'
+import { hydrate } from 'react-dom'
 import Loadable from 'react-loadable'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
 import { BrowserRouter } from 'react-router-dom'
 import App from './app/App'
 import MobileApp from './mobileApp/App'
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
 import purple from '@material-ui/core/colors/purple'
 
-// Read the state sent with markup
 const state = window.__STATE__
-// reproduce the store used to render the page on server
 const store = configureStore(state)
 delete window.__STATE__
 const state1 = store.getState()

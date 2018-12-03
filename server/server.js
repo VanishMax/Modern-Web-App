@@ -8,15 +8,13 @@ import stats from '~/public/react-loadable.json'
 import { StaticRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import configureStore from '~/src/redux/configureStore'
-import {Helmet} from "react-helmet"
+import { Helmet } from 'react-helmet'
 
 import { SheetsRegistry } from 'react-jss/lib/jss'
 import JssProvider from 'react-jss/lib/JssProvider'
-import {
-    MuiThemeProvider,
-    createMuiTheme,
-    createGenerateClassName,
-} from '@material-ui/core/styles'
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
+import createMuiTheme from '@material-ui/core/styles/createMuiTheme'
+import createGenerateClassName from '@material-ui/core/styles/createGenerateClassName'
 import purple from '@material-ui/core/colors/purple'
 
 import App from '&/app/App'
