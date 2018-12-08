@@ -1,31 +1,25 @@
 import React from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import Dialog from '@material-ui/core/Dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import Button from '@material-ui/core/Button'
+
+const styles = {
+  div: {
+    width: '20%',
+    margin: 'auto',
+    transition: 'margin 1s',
+    backgroundColor: 'lightgreen',
+    color: 'white',
+    cursor: 'pointer',
+    borderRadius: '3px'
+  }
+}
 
 export default function Loading(props) {
   if (props.error) {
-    return <Dialog
-      open={props.error} onClose={null} style={{backgroundColor: 'white !IMPORTANT'}}
-      aria-labelledby="alert-dialog-title"
-      aria-describedby="alert-dialog-description"
-    >
-      <DialogTitle id="alert-dialog-title">{"New content"}</DialogTitle>
-      <DialogContent>
-        <DialogContentText id="alert-dialog-description">
-          New content of the Modern Web App has arrived. Please, refresh the page
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Button color="secondary" onClick={ () => window.location.reload(true) }>
-          Refresh
-        </Button>
-      </DialogActions>
-    </Dialog>
+    return <div style={styles.div} onClick={ () => window.location.reload(true) } align="center">
+      <h3>
+        Please, click here or reload the page. New content is ready.
+      </h3>
+    </div>
   } else if (props.pastDelay) {
     return <CircularProgress color="primary"/>
   } else {

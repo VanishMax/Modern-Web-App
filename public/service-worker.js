@@ -1,4 +1,4 @@
-var CACHE = 'cache'
+var CACHE = 'cache-1'
 
 self.addEventListener('install', function(evt) {
   evt.waitUntil(precache())
