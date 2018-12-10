@@ -5,16 +5,14 @@ App is created for those who has been
 searching for nice and scalable example of Progressive Web App with
 Server Side Rendering and Code Splitting</p>
 
-*Why do I need it?* - It is a ready template for big and scalable
-projects like shops, blogs and social networks. All you need is to
-write components with React and Redux, sending requests to your
-backend.<hr/>
+Feel free to read about this app on [Medium](https://medium.com/@maxkors2014/here-it-is-modern-web-app-2a3199b95ee) (English) or [Habr](https://habr.com/post/432368/) (Russian)
 
 ### Features:
 * Server Side Rendering
 * Progressive Web App
 * Code Splitting using React-Loadable
 * React-router
+* Simple Redux counter
 * Material-ui v3 supported
 * Mobile version included
 * All modules are up-to-date
