@@ -5,7 +5,8 @@ App is created for those who has been
 searching for nice and scalable example of Progressive Web App with
 Server Side Rendering and Code Splitting</p>
 
-Feel free to read about this app on Medium (English) or [Habr](https://habr.com/post/432368/) (Russian)
+Feel free to read about this app on [Medium]()https://medium.com/@vanishmax/here-it-is-modern-web-app-651946efaa93
+ (English) or [Habr](https://habr.com/post/432368/) (Russian)
 
 ### Features:
 * Server Side Rendering
