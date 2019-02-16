@@ -12,6 +12,7 @@ Feel free to read about this app on [Medium](https://medium.com/@vanishmax/here-
 * Server Side Rendering
 * Progressive Web App
 * Code Splitting using React-Loadable
+* Prefetch
 * React-router
 * Simple Redux counter
 * Material-ui v3 supported
