@@ -34,7 +34,7 @@ class Home extends React.Component{
   }
   componentDidMount() {
     if(!this.props.corgi) {
-      this.props.actions.getCorgi();
+      this.props.actions.getCorgi()
     }
   }
   increase(){
