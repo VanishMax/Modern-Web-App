@@ -32,6 +32,11 @@ class Home extends React.Component{
     this.increase = this.increase.bind(this)
     this.decrease = this.decrease.bind(this)
   }
+  componentDidMount() {
+    if(!this.props.corgi) {
+      this.props.actions.getCorgi();
+    }
+  }
   increase(){
     this.props.actions.increase()
   }
