@@ -1,4 +1,4 @@
-import response from '../responce';
+import response from '../response'
 
 export const INCREASE = 'INCREASE'
 export const DECREASE = 'DECREASE'
@@ -20,5 +20,5 @@ export const getCorgi = () => async (dispatch) => {
   const result = await response(
     'https://dog.ceo/api/breed/corgi/cardigan/images/random',
   );
-  dispatch({ type: GET_CORGI, payload: result.message });
+  dispatch({ type: GET_CORGI, payload: result.message })
 };

@@ -1,17 +1,17 @@
-import Loadable from 'react-loadable';
-import React from 'react';
-import { serverFetch as homeFetch } from './Home/serverFetch';
+import Loadable from 'react-loadable'
+import React from 'react'
+import { serverFetch as homeFetch } from './Home/serverFetch'
 
 const AsyncHome = Loadable({
   loader: () => import(/* webpackChunkName: 'Home' */ './Home'),
-  loading: () => <div>123</div>,
-  delay: 300,
+  loading: () => <div></div>,
+  delay: 400,
 });
 
 const AsyncAbout = Loadable({
   loader: () => import(/* webpackChunkName: 'About' */ './About'),
-  loading: () => <div>123</div>,
-  delay: 300,
+  loading: () => <div></div>,
+  delay: 400,
 });
 
 export default [
