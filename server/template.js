@@ -1,8 +1,8 @@
 // html skeleton provider
-export default function template(sheetsRegistry, helmet, initialState = {}, content = '', bundles) {
+export default function template(sheetsRegistry, helmet, state = {}, content = '', bundles) {
   const css = sheetsRegistry.toString()
   const scripts = ` <script>
-                   window.__STATE__ = ${JSON.stringify(initialState)}
+                   window.__STATE__ = ${JSON.stringify(state)}
                 </script>
                 <script>
                 if ('serviceWorker' in navigator) {

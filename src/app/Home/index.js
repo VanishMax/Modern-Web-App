@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as Actions from '&/redux/actions'
 
-import Header from './Header'
+import Header from '../Header'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
@@ -18,6 +18,11 @@ const styles = {
   },
   btnLeft: {
     marginRight: 20
+  },
+  img: {
+    width: 100,
+    marginBottom: 5,
+    display: "block",
   }
 }
 
@@ -42,6 +47,7 @@ class Home extends React.Component{
         </Helmet>
         <Header/>
         <Paper elevation={4} style={styles.paper} align="center">
+          <img src={this.props.corgi} style={styles.img} alt=""/>
           <Typography variant="h5">Redux-Counter</Typography>
           <Typography variant="subtitle1">Counter: {this.props.count}</Typography>
           <br/>
@@ -54,7 +60,8 @@ class Home extends React.Component{
 }
 
 const mapStateToProps = (state) => ({
-  count: state.count
+  count: state.count,
+  corgi: state.corgi
 })
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(Actions, dispatch)

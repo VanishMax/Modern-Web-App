@@ -21,10 +21,8 @@ import App from '&/app/App'
 import MobileApp from '&/mobileApp/App'
 import template from './template'
 
-export default function render(url, initialState, mobile) {
-
+export default function render(url, store, mobile) {
   const reactRouterContext = {}
-
   const sheetsRegistry = new SheetsRegistry()
   const sheetsManager = new Map()
   const theme = createMuiTheme({
@@ -39,8 +37,6 @@ export default function render(url, initialState, mobile) {
     },
   })
   const generateClassName = createGenerateClassName()
-
-  const store = configureStore(initialState)
 
   let modules = []
 
@@ -60,7 +56,9 @@ export default function render(url, initialState, mobile) {
 
   let bundles = getBundles(stats, modules)
   const helmet = Helmet.renderStatic()
-  initialState.mobile = mobile
+  const state = store.getState()
 
-  return template(sheetsRegistry, helmet, initialState, content, bundles)
+  state.mobile = mobile
+
+  return template(sheetsRegistry, helmet, state, content, bundles)
 }
