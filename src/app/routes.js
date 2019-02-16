@@ -1,29 +1,20 @@
-import Loadable from 'react-loadable'
 import React from 'react'
 import { serverFetch as homeFetch } from './Home/serverFetch'
 
-const AsyncHome = Loadable({
-  loader: () => import(/* webpackChunkName: 'Home' */ './Home'),
-  loading: () => <div></div>,
-  delay: 400,
-});
-
-const AsyncAbout = Loadable({
-  loader: () => import(/* webpackChunkName: 'About' */ './About'),
-  loading: () => <div></div>,
-  delay: 400,
-});
+import LoadableHOC from '&/LoadableHOC'
+const AsyncHome = LoadableHOC({ loader: () => import(/* webpackChunkName: 'Home' */ './Home') })
+const AsyncAbout = LoadableHOC({ loader: () => import(/* webpackChunkName: 'About' */ './About') })
 
 export default [
   {
     path: '/',
     component: AsyncHome,
     serverFetch: homeFetch,
-    exact: true,
+    exact: true
   },
   {
     path: '/about',
     component: AsyncAbout,
-    exact: true,
+    exact: true
   },
-];
+]

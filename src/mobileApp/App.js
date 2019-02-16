@@ -1,18 +1,9 @@
 import React from 'react'
 import { Switch, Route } from 'react-router'
 
-import Loadable from 'react-loadable'
-import Loading from '~/src/Loading'
-const AsyncHome = Loadable({
-  loader: () => import(/* webpackChunkName: "MobileHome" */ './Home'),
-  loading: Loading,
-  delay: 300,
-})
-const AsyncAbout = Loadable({
-  loader: () => import(/* webpackChunkName: "MobileAbout" */ './About'),
-  loading: Loading,
-  delay: 300,
-})
+import LoadableHOC from '&/LoadableHOC'
+const AsyncHome = LoadableHOC({ loader: () => import(/* webpackChunkName: "MobileHome" */ './Home') })
+const AsyncAbout = LoadableHOC({ loader: () => import(/* webpackChunkName: "MobileAbout" */ './About') })
 
 export default function MobileApp() {
   return(
